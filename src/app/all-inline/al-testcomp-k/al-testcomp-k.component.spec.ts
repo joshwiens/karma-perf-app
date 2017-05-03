@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlTestcompKComponent } from './al-testcomp-k.component';
 
-describe('AlTestcompKComponent', () => {
+describe('Component: AlTestcompKComponent', () => {
   let component: AlTestcompKComponent;
   let fixture: ComponentFixture<AlTestcompKComponent>;
 
@@ -19,7 +19,7 @@ describe('AlTestcompKComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Should create', () => {
     expect(component).toBeTruthy();
   });
 });
