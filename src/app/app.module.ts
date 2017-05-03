@@ -10,10 +10,12 @@ import { InlineTemplateModule } from './inline-template/inline-template.module';
 import { StandardComponentModule } from './standard-component/standard-component.module';
 
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

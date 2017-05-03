@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 export const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
   { path: 'all-inline', loadChildren: './all-inline/all-inline.module#AllInlineModule' },
   { path: 'inline-style', loadChildren: './inline-style/inline-style.module#InlineStyleModule' },
   { path: 'inline-template', loadChildren: './inline-template/inline-template.module#InlineTemplateModule' },
