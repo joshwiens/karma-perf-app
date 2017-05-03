@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InlineTemplateComponent } from './inline-template.component';
 
-describe('InlineTemplateComponent', () => {
+describe('Component: InlineTemplateComponent', () => {
   let component: InlineTemplateComponent;
   let fixture: ComponentFixture<InlineTemplateComponent>;
 
@@ -19,7 +19,7 @@ describe('InlineTemplateComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Should create', () => {
     expect(component).toBeTruthy();
   });
 });
