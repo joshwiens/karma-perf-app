@@ -1,28 +1,56 @@
-# karma-perf-app
+# AngularCLI Karma-Webpack Performance Test Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
+<div align="center">
+  <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->
+  <a href="https://github.com/webpack/webpack">
+    <img width="200" height="200" vspace="" hspace="25"
+      src="https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon.svg">
+  </a>
+  <h1>Karma-Webpack Performance Application</h1>
+  <p>An @angular/cli Karma-Webpack Performance Benchmarking Application ( Webpack Internal ).<p>
+</div>
 
-## Development server
+<h2 align="center">Current Release Performance</h2>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`tbd`
 
-## Code scaffolding
+<h2 align="center">Install</h2>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+```bash
+npm i -g gnomon
 
-## Build
+git clone git@github.com:webpack-contrib/karma-perf-app.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+cd karma-perf-app
 
-## Running unit tests
+yarn install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h2 align="center">Usage</h2>
 
-## Running end-to-end tests
+```bash
+# See https://github.com/paypal/gnomon for full options set
+npm test | gnomon -t elapsed-total -h 3 -m 1.5
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+<h2 align="center">Test Types</h2>
 
-## Further help
+This application is intended to provide a somewhat real world ( all be it contrived ) benchmark to vet major changes to the `karma-webpack` plugin in order to provide consistant performance.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Component Tests
+
+Component tests are broken down into 27 types and identified by `<compTypePrefix>-testcomp-<identifier>` e.g. `al-testcomp-a`
+
+Each test type is then duplicated across 5 different component implementation types.
+
+- A `standard` module containing test components with external templateUrl and styleUrls.
+- An `inline style` module containing test components with external templateUrl and inline styles.
+- An `inline template` module containing test components with inline html templates and external styleUrls.
+- An `all inline` module containing test components with inline html templates and inline styles.
+- A `lazy` module containing test components with external templateUrl and styleUrls.
+
+### Directive Tests
+
+#### Pipe Tests
+
+#### Service Tests
