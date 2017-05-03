@@ -18,18 +18,18 @@ describe('Pipe: OrderByPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it ('should return dates in order asc', () => {
+  it ('Should return dates in order asc', () => {
     const a = new Date();
     const b = new Date();
     expect(pipe.transform([a, b], '+')).toEqual([a, b]);
   });
 
-  it ('should return numbers in order asc', () => {
+  it ('Should return numbers in order asc', () => {
     const numbers = [0, -1, 345, 1234, 1337, -3];
     expect(pipe.transform(numbers, '+')).toEqual([-3, -1, 0, 345, 1234, 1337]);
   });
 
-  it('should not do anything in-case of not an array', () => {
+  it('Should not do anything in-case of not an array', () => {
     expect(pipe.transform('foo')).toEqual('foo');
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
@@ -37,30 +37,30 @@ describe('Pipe: OrderByPipe', () => {
     expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
   });
 
-  it('should create a new version of the array', () => {
+  it('Should create a new version of the array', () => {
     const arr = [3, 2, 1];
     expect(pipe.transform(arr)).toEqual([1, 2, 3]);
     expect(arr).toEqual([3, 2, 1]);
   });
 
-  it('should order by value if there is no config', () => {
+  it('Should order by value if there is no config', () => {
     expect(pipe.transform([3, 2, 1])).toEqual([1, 2, 3]);
     expect(pipe.transform(['c', 'b', 'a'])).toEqual(['a', 'b', 'c']);
   });
 
-  it('should order by reverse value if there a stringy value of `-`', () => {
+  it('Should order by reverse value if there a stringy value of `-`', () => {
     expect(pipe.transform([3, 2, 1], '-')).toEqual([3, 2, 1]);
     expect(pipe.transform(['c', 'b', 'a'], '-')).toEqual(['c', 'b', 'a']);
     expect(pipe.transform([1, 2, 3], '-')).toEqual([3, 2, 1]);
     expect(pipe.transform(['a', 'b', 'c'], '-')).toEqual(['c', 'b', 'a']);
   });
 
-  it('should order by value if there a stringy value of `+`', () => {
+  it('Should order by value if there a stringy value of `+`', () => {
     expect(pipe.transform([3, 2, 1], '+')).toEqual([1, 2, 3]);
     expect(pipe.transform(['c', 'b', 'a'], '+')).toEqual(['a', 'b', 'c']);
   });
 
-  it('should order by property with a single character name', () => {
+  it('Should order by property with a single character name', () => {
     expect(pipe.transform([{a: 1}, {a: 3}, {a: 42}, {a: 2}], 'a'))
       .toEqual([{a: 1}, {a: 2}, {a: 3}, {a: 42}]);
 
@@ -71,7 +71,7 @@ describe('Pipe: OrderByPipe', () => {
       .toEqual([{a: 42}, {a: 3}, {a: 2}, {a: 1}]);
   });
 
-  it('should order by property if there a stringy value of `+property` or `property`', () => {
+  it('Should order by property if there a stringy value of `+property` or `property`', () => {
     expect(pipe.transform(testArray, 'amount')).toEqual([
       {id: 3, name: 'Pear', amount: 6},
       {id: 4, name: 'Plum', amount: 33},
@@ -87,7 +87,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by a property of type boolean', () => {
+  it('Should order by a property of type boolean', () => {
     expect(pipe.transform([
       {id: 1, value: false},
       {id: 2, value: true},
@@ -101,7 +101,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by a property of type date', () => {
+  it('Should order by a property of type date', () => {
     const curr = new Date;
     expect(pipe.transform([
       {id: 1, value: new Date(curr.getTime() + 3)},
@@ -116,7 +116,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by property if there a stringy value of `+property` or `property`', () => {
+  it('Should order by property if there a stringy value of `+property` or `property`', () => {
     expect(pipe.transform(testArray, 'amount')).toEqual([
       {id: 3, name: 'Pear', amount: 6},
       {id: 4, name: 'Plum', amount: 33},
@@ -125,7 +125,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should reverse order by property if there a stringy value of `-property`', () => {
+  it('Should reverse order by property if there a stringy value of `-property`', () => {
     expect(pipe.transform(testArray, '-amount')).toEqual([
       {id: 1, name: 'Apple', amount: 245},
       {id: 2, name: 'Orange', amount: 113},
@@ -134,7 +134,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should reverse order by multiple properties if there an array values', () => {
+  it('Should reverse order by multiple properties if there an array values', () => {
     expect(pipe.transform([
       {id: 4, name: 'Plum', amount: 33},
       {id: 2, name: 'Orange', amount: 33},
@@ -149,7 +149,7 @@ describe('Pipe: OrderByPipe', () => {
   });
 
 
-  it('should reverse order by multiple properties if there an array values', () => {
+  it('Should reverse order by multiple properties if there an array values', () => {
     expect(pipe.transform([
       {id: 4, name: 'Plum', amount: 33},
       {id: 2, name: 'Orange', amount: 33},
@@ -163,7 +163,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should reverse order by multiple properties if there an array values', () => {
+  it('Should reverse order by multiple properties if there an array values', () => {
     expect(pipe.transform([
       {id: 2, name: 'b', amount: 33},
       {id: 2, name: 'a', amount: 33},
@@ -177,7 +177,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by deep property', () => {
+  it('Should order by deep property', () => {
     expect(pipe.transform([
       {id: 1, name: 'Apple', amount: 245, deep: {prop: 4}},
       {id: 2, name: 'Orange', amount: 113, deep: {prop: 2}},
@@ -191,7 +191,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by deep property', () => {
+  it('Should order by deep property', () => {
     expect(pipe.transform([
       {id: 1, name: 'Apple', amount: 245, deep: {prop: 4}},
       {id: 2, name: 'Orange', amount: 113, deep: {prop: 2}},
@@ -205,7 +205,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by deep property even if missing', () => {
+  it('Should order by deep property even if missing', () => {
     expect(pipe.transform([
       {id: 1, name: 'Apple', amount: 245, deep: {prop: { val: 3}}},
       {id: 2, name: 'Orange', amount: 113, deep: {}},
@@ -225,7 +225,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by deep property even if missing', () => {
+  it('Should order by deep property even if missing', () => {
     expect(pipe.transform([
       {id: 1, name: 'Apple', amount: 245, deep: {prop: { val: 3}}},
       {id: 2, name: 'Orange', amount: 113, deep: {}},
@@ -245,7 +245,7 @@ describe('Pipe: OrderByPipe', () => {
     ]);
   });
 
-  it('should order by deep string type property even if missing', () => {
+  it('Should order by deep string type property even if missing', () => {
     expect(pipe.transform([
       {id: 1, name: 'Apple', amount: 245, deep: {prop: { val: 'b'}}},
       {id: 2, name: 'Orange', amount: 113, deep: {}},

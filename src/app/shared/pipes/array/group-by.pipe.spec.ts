@@ -11,7 +11,7 @@ describe('Pipe: GroupByPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should not modify if not an array', () => {
+  it('Should not modify if not an array', () => {
     expect(pipe.transform('apple')).toEqual('apple');
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);

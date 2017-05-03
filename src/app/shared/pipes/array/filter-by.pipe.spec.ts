@@ -18,7 +18,7 @@ describe('Pipe: FilterByPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should not modify if not an array', () => {
+  it('Should not modify if not an array', () => {
     expect(pipe.transform('foo', [''], '')).toEqual('foo');
     expect(pipe.transform(null, [''], '')).toEqual(null);
     expect(pipe.transform(undefined, [''], '')).toEqual(undefined);
@@ -26,21 +26,21 @@ describe('Pipe: FilterByPipe', () => {
     expect(pipe.transform({foo: 1, bar: 2}, [''], '')).toEqual({foo: 1, bar: 2});
   });
 
-  it('should filter by single field with no value', () => {
+  it('Should filter by single field with no value', () => {
     const filtered = pipe.transform(data, ['prop']);
 
     expect(filtered.length).toEqual(1);
     expect(filtered[0]).toEqual(data[0]);
   });
 
-  it('should filter by single field with a single result', () => {
+  it('Should filter by single field with a single result', () => {
     const filtered = pipe.transform(data, ['emp_id'], 1);
 
     expect(filtered.length).toEqual(1);
     expect(filtered[0]).toEqual(data[0]);
   });
 
-  it('should filter by boolean value', () => {
+  it('Should filter by boolean value', () => {
     const filtered = pipe.transform(data, ['employment_status'], true);
 
     expect(filtered.length).toEqual(2);
@@ -48,7 +48,7 @@ describe('Pipe: FilterByPipe', () => {
     expect(filtered[1]).toEqual(data[2]);
   });
 
-  it('should filter by multiple fields with a two result', () => {
+  it('Should filter by multiple fields with a two result', () => {
     const filtered = pipe.transform(data, ['name', 'surname'], 'John');
 
     expect(filtered.length).toEqual(2);
@@ -56,14 +56,14 @@ describe('Pipe: FilterByPipe', () => {
     expect(filtered[1]).toEqual(data[2]);
   });
 
-  it('should filter by nested field with a single result', () => {
+  it('Should filter by nested field with a single result', () => {
     const filtered = pipe.transform(data, ['employment.employer'], 'Land');
 
     expect(filtered.length).toEqual(1);
     expect(filtered[0]).toEqual(data[2]);
   });
 
-  it('should filter by nested field with a multiple result', () => {
+  it('Should filter by nested field with a multiple result', () => {
     const filtered = pipe.transform(data, ['employment.title'], 'Designer');
 
     expect(filtered.length).toEqual(2);
@@ -71,7 +71,7 @@ describe('Pipe: FilterByPipe', () => {
     expect(filtered[1]).toEqual(data[3]);
   });
 
-  it('should filter by multiple nested field with a multiple result', () => {
+  it('Should filter by multiple nested field with a multiple result', () => {
     const filtered = pipe.transform(data, ['employment.employer', 'employment.previous_employer'], 'Dream Land');
 
     expect(filtered.length).toEqual(2);
@@ -79,7 +79,7 @@ describe('Pipe: FilterByPipe', () => {
     expect(filtered[1]).toEqual(data[3]);
   });
 
-  it('should filter by field with strict flag enabled', () => {
+  it('Should filter by field with strict flag enabled', () => {
     const filtered = pipe.transform(data, ['employment.employer'], 'casa', true);
 
     expect(filtered.length).toEqual(0);
