@@ -1,5 +1,3 @@
-# AngularCLI Karma-Webpack Performance Test Application
-
 <div align="center">
   <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->
   <a href="https://github.com/webpack/webpack">
