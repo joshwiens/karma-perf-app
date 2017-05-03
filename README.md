@@ -39,6 +39,33 @@ This application is intended to provide a somewhat real world ( all be it contri
 
 Component tests are broken down into 27 types and identified by `<compTypePrefix>-testcomp-<identifier>` e.g. `al-testcomp-a`
 
+- `type: -a` - Content projection test
+- `type: -b` - Dom test
+- `type: -c` - Dynamic CSS class
+- `type: -d` - Dynamic style test
+- `type: -e` - Input binding test
+- `type: -f` - Output binding test
+- `type: -g` - EventEmitter test
+- `type: -h` - Nested component test
+- `type: -i` - Observable test
+- `type: -j` - Routing test
+- `type: -k` - Markup test
+- `type: -l` - Event handler test
+- `type: -m` - Provider test
+- `type: -n` - Async Provider test
+- `type: -o` - Override provider test
+- `type: -p` - Routeroutlet test
+- `type: -q` - Shallow test
+- `type: -r` - Override template test
+- `type: -s` - Nested override
+- `type: -t` - Deep nested override
+- `type: -u` - Lifecycle OnInit test
+- `type: -v` - Lifecycle OnChanges test
+- `type: -w` - Lifecycle OnDestroy test
+- `type: -x` - Lifecycle child component OnInit test
+- `type: -y` - Dataflow to child component test
+- `type: -z` - Dataflow from child component test
+
 Each test type is then duplicated across 5 different component implementation types.
 
 - A `standard` module containing test components with external templateUrl and styleUrls.
