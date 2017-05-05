@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 import { AlTestcompEComponent } from './al-testcomp-e.component';
 
@@ -21,5 +23,12 @@ describe('Component: AlTestcompEComponent', () => {
 
   it('Should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Should correctly render the @Input value', () => {
+    expect(fixture.debugElement.children[0].nativeElement.innerHTML).toBe('');
+    component.testMessage = 'input text';
+    fixture.detectChanges();
+    expect(fixture.debugElement.children[0].nativeElement.innerHTML).toBe('input text');
   });
 });

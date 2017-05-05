@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'kwp-lm-testcomp-e',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lm-testcomp-e.component.scss']
 })
 export class LmTestcompEComponent implements OnInit {
+  @Input() testMessage: string;
 
   constructor() { }
 

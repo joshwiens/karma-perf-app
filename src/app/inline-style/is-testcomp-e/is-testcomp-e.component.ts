@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'kwp-is-testcomp-e',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class IsTestcompEComponent implements OnInit {
+  @Input() testMessage: string;
 
   constructor() { }
 

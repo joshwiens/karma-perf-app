@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'kwp-al-testcomp-e',
   template: `
-    <p>
-      al-testcomp-e Works!
-    </p>
+    <div>{{ testMessage }}</div>
   `,
   styles: []
 })
 export class AlTestcompEComponent implements OnInit {
+  @Input() testMessage: string;
 
   constructor() { }
 
