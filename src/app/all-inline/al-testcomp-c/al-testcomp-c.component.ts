@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'kwp-al-testcomp-c',
   template: `
-    <p>
-      al-testcomp-c Works!
-    </p>
+    <div [ngClass]="{ 'active': isActive, 'inactive': !isActive }"></div>
   `,
   styles: []
 })
 export class AlTestcompCComponent implements OnInit {
+  @Input() isActive = false;
 
   constructor() { }
 
