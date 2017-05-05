@@ -78,4 +78,6 @@ Each test type is then duplicated across 5 different component implementation ty
 
 #### Pipe Tests
 
+A collection of common pipes covering most of the major primatives 
+
 #### Service Tests
