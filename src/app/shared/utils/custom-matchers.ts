@@ -11,10 +11,10 @@
 declare var global: any;
 const _global = <any>(typeof window === 'undefined' ? global : window);
 
-import { _dom as _ } from './dom-tools';
+import { _dom as dom } from './dom-tools';
 import { applyCssPrefixes } from './auto-prefixer';
 
-export const expect: (actual: any) => NgMatchers = <any>_global.expect;
+export const expect: (actual: any) => NgMatchers = <any> _global.expect;
 
 /**
  * Jasmine matchers that check Angular specific conditions.
@@ -106,7 +106,7 @@ export const customMatchers: jasmine.CustomMatcherFactories = {
     function buildError(isNot: boolean) {
       return function (actual: any, className: string) {
         return {
-          pass: _.hasClass(actual, className) == !isNot,
+          pass: dom.hasClass(actual, className) == !isNot,
           get message() {
             return `
               Expected ${actual.outerHTML} ${isNot ? 'not ' : ''}
@@ -145,7 +145,7 @@ export const customMatchers: jasmine.CustomMatcherFactories = {
       compare: function (actual: any, styles: { [k: string]: string } | string) {
         let allPassed: boolean;
         if (typeof styles === 'string') {
-          allPassed = _.hasStyle(actual, styles);
+          allPassed = dom.hasStyle(actual, styles);
         } else {
           allPassed = Object.keys(styles).length !== 0;
           Object.keys(styles).forEach(prop => {
@@ -157,10 +157,8 @@ export const customMatchers: jasmine.CustomMatcherFactories = {
           pass: allPassed,
           get message() {
             const expectedValueStr = typeof styles === 'string' ? styles : JSON.stringify(styles);
-            return `
-              Expected ${actual.outerHTML} ${!allPassed ? ' ' : 'not '} to contain the
-              CSS ${typeof styles === 'string' ? 'property' : 'styles'} "'${expectedValueStr}'"
-            `;
+            return `Expected ${actual.outerHTML} ${!allPassed ? ' ' : 'not '}to
+              contain the CSS ${typeof styles === 'string' ? 'property' : 'styles'} "${expectedValueStr}"`;
           }
         };
       }
@@ -175,12 +173,12 @@ export const customMatchers: jasmine.CustomMatcherFactories = {
  */
 function hasPrefixedStyles(actual, key, value) {
   value = value !== "*" ? value.trim() : undefined;
-  let elHasStyle = _.hasStyle(actual, key, value);
+  let elHasStyle = dom.hasStyle(actual, key, value);
   if (!elHasStyle) {
     let prefixedStyles = applyCssPrefixes({ [key]: value });
     Object.keys(prefixedStyles).forEach(prop => {
       // Search for optional prefixed values
-      elHasStyle = elHasStyle || _.hasStyle(actual, prop, prefixedStyles[prop]);
+      elHasStyle = elHasStyle || dom.hasStyle(actual, prop, prefixedStyles[prop]);
     });
   }
   return elHasStyle;
@@ -188,7 +186,7 @@ function hasPrefixedStyles(actual, key, value) {
 
 function elementText(n: any): string {
   const hasNodes = (m: any) => {
-    const children = _.childNodes(m);
+    const children = dom.childNodes(m);
     return children && children["length"];
   };
 
@@ -196,21 +194,21 @@ function elementText(n: any): string {
     return n.map(elementText).join('');
   }
 
-  if (_.isCommentNode(n)) {
+  if (dom.isCommentNode(n)) {
     return '';
   }
 
-  if (_.isElementNode(n) && _.tagName(n) == 'CONTENT') {
-    return elementText(Array.prototype.slice.apply(_.getDistributedNodes(n)));
+  if (dom.isElementNode(n) && dom.tagName(n) == 'CONTENT') {
+    return elementText(Array.prototype.slice.apply(dom.getDistributedNodes(n)));
   }
 
-  if (_.hasShadowRoot(n)) {
-    return elementText(_.childNodesAsList(_.getShadowRoot(n)));
+  if (dom.hasShadowRoot(n)) {
+    return elementText(dom.childNodesAsList(dom.getShadowRoot(n)));
   }
 
   if (hasNodes(n)) {
-    return elementText(_.childNodesAsList(n));
+    return elementText(dom.childNodesAsList(n));
   }
 
-  return _.getText(n);
+  return dom.getText(n);
 }
