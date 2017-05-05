@@ -1,3 +1,2 @@
-<p>
-  lm-testcomp-b works!
-</p>
+<div class="container" *ngIf="isVisible">Is Visible</div>
+<button (click)="isVisible = !isVisible">Toggle Visibility</button>

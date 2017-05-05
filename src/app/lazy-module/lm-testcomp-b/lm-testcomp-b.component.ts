@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lm-testcomp-b.component.scss']
 })
 export class LmTestcompBComponent implements OnInit {
+  public isVisible = false;
 
   constructor() { }
 
