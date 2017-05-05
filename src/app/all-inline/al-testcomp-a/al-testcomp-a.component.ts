@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'kwp-al-testcomp-a',
   template: `
-    <p>
-      al-testcomp-a Works!
-    </p>
+    <kwp-al-childcomp-a>
+        <span title>Test Component Title</span>
+        <div body>Test Component Body</div>
+    </kwp-al-childcomp-a>
   `,
   styles: []
 })

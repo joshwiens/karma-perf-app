@@ -31,6 +31,8 @@ import { AlTestcompXComponent } from './al-testcomp-x/al-testcomp-x.component';
 import { AlTestcompYComponent } from './al-testcomp-y/al-testcomp-y.component';
 import { AlTestcompZComponent } from './al-testcomp-z/al-testcomp-z.component';
 
+import { AlChildcompAComponent } from './al-testcomp-a/al-childcomp-a/al-childcomp-a.component';
+
 @NgModule({
   declarations: [
     AllInlineComponent,
@@ -59,7 +61,8 @@ import { AlTestcompZComponent } from './al-testcomp-z/al-testcomp-z.component';
     AlTestcompWComponent,
     AlTestcompXComponent,
     AlTestcompYComponent,
-    AlTestcompZComponent
+    AlTestcompZComponent,
+    AlChildcompAComponent
   ],
   imports: [
     CommonModule,
