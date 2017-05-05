@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class IsTestcompDComponent implements OnInit {
+  public bgColor = 'red';
 
   constructor() { }
 
