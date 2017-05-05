@@ -31,6 +31,8 @@ import { ScTestcompXComponent } from './sc-testcomp-x/sc-testcomp-x.component';
 import { ScTestcompYComponent } from './sc-testcomp-y/sc-testcomp-y.component';
 import { ScTestcompZComponent } from './sc-testcomp-z/sc-testcomp-z.component';
 
+import { ScChildcompAComponent } from './sc-testcomp-a/sc-childcomp-a/sc-childcomp-a.component';
+
 @NgModule({
   declarations: [
     StandardComponentComponent,
@@ -59,7 +61,8 @@ import { ScTestcompZComponent } from './sc-testcomp-z/sc-testcomp-z.component';
     ScTestcompWComponent,
     ScTestcompXComponent,
     ScTestcompYComponent,
-    ScTestcompZComponent
+    ScTestcompZComponent,
+    ScChildcompAComponent
   ],
   imports: [
     CommonModule,
