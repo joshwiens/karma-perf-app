@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sc-testcomp-d.component.scss']
 })
 export class ScTestcompDComponent implements OnInit {
+  public bgColor = 'red';
 
   constructor() { }
 
