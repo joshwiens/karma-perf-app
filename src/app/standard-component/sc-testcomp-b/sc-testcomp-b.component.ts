@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sc-testcomp-b.component.scss']
 })
 export class ScTestcompBComponent implements OnInit {
+  public isVisible = false;
 
   constructor() { }
 
