@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class IsTestcompBComponent implements OnInit {
+  public isVisible = false;
 
   constructor() { }
 
