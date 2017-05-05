@@ -31,6 +31,8 @@ import { LmTestcompXComponent } from './lm-testcomp-x/lm-testcomp-x.component';
 import { LmTestcompYComponent } from './lm-testcomp-y/lm-testcomp-y.component';
 import { LmTestcompZComponent } from './lm-testcomp-z/lm-testcomp-z.component';
 
+import { LmChildcompAComponent } from './lm-testcomp-a/lm-childcomp-a/lm-childcomp-a.component';
+
 @NgModule({
   declarations: [
     LazyModuleComponent,
@@ -59,7 +61,8 @@ import { LmTestcompZComponent } from './lm-testcomp-z/lm-testcomp-z.component';
     LmTestcompWComponent,
     LmTestcompXComponent,
     LmTestcompYComponent,
-    LmTestcompZComponent
+    LmTestcompZComponent,
+    LmChildcompAComponent
   ],
   imports: [
     CommonModule,
