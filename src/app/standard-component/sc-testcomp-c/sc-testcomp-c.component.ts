@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'kwp-sc-testcomp-c',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sc-testcomp-c.component.scss']
 })
 export class ScTestcompCComponent implements OnInit {
+  @Input() isActive = false;
 
   constructor() { }
 
