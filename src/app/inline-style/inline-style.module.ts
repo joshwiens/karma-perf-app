@@ -31,6 +31,8 @@ import { IsTestcompXComponent } from './is-testcomp-x/is-testcomp-x.component';
 import { IsTestcompYComponent } from './is-testcomp-y/is-testcomp-y.component';
 import { IsTestcompZComponent } from './is-testcomp-z/is-testcomp-z.component';
 
+import { IsChildcompAComponent } from './is-testcomp-a/is-childcomp-a/is-childcomp-a.component';
+
 @NgModule({
   declarations: [
     InlineStyleComponent,
@@ -59,7 +61,8 @@ import { IsTestcompZComponent } from './is-testcomp-z/is-testcomp-z.component';
     IsTestcompWComponent,
     IsTestcompXComponent,
     IsTestcompYComponent,
-    IsTestcompZComponent
+    IsTestcompZComponent,
+    IsChildcompAComponent
   ],
   imports: [
     CommonModule,
