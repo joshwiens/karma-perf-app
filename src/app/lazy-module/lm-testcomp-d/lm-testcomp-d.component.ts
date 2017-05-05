@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lm-testcomp-d.component.scss']
 })
 export class LmTestcompDComponent implements OnInit {
+  public bgColor = 'red';
 
   constructor() { }
 
